@@ -11,9 +11,14 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          // TODO Creating Bloc for checking whether am i Connected to Internet / Wifi or not
-          child: BlocBuilder<InternetBloc, InternetState>(
+          child: BlocConsumer<InternetBloc, InternetState>(
+            listener: (context, state) {
+              // TODO: By Using this w'll show the SnackBar, AlertDialog,etc...
+              // TODO: implement listener
+            },
             builder: (context, state) {
+            // TODO Creating Bloc for checking whether am i Connected to Internet / Wifi or not
+            // TODO: By using the builder the UI Will be change 
               if (state is InternetGainedState) {
                 return Text('Internet Connected');
               } else if (state is InternetLostState) {
