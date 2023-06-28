@@ -5,9 +5,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: SafeArea(
-        child: Container(),
+        child: Center(
+          child: Text('Loading...'),
+        ),
       ),
     );
   }
