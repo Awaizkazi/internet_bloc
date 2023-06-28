@@ -15,10 +15,25 @@ class HomeScreen extends StatelessWidget {
             listener: (context, state) {
               // TODO: By Using this w'll show the SnackBar, AlertDialog,etc...
               // TODO: implement listener
+              if (state is InternetGainedState) {
+                ScaffoldMessenger.maybeOf(context)!.showSnackBar(
+                  SnackBar(
+                    content: Text('Internet Connected!'),
+                    backgroundColor: Colors.green,
+                  ),
+                );
+              }else if(state is InternetLostState){
+                ScaffoldMessenger.maybeOf(context)!.showSnackBar(
+                  SnackBar(
+                    content: Text('Internet DisConnected!'),
+                    backgroundColor: Colors.red,  
+                  ),
+                );
+              }
             },
             builder: (context, state) {
-            // TODO Creating Bloc for checking whether am i Connected to Internet / Wifi or not
-            // TODO: By using the builder the UI Will be change 
+              // TODO Creating Bloc for checking whether am i Connected to Internet / Wifi or not
+              // TODO: By using the builder the UI Will be change
               if (state is InternetGainedState) {
                 return Text('Internet Connected');
               } else if (state is InternetLostState) {
