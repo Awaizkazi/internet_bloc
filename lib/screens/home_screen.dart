@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
     return  Scaffold(
       body: SafeArea(
         child: Center(
+          // TODO Creating Bloc for checking whether am i Connected to Internet / Wifi or not
           child: Text('Loading...'),
         ),
       ),
